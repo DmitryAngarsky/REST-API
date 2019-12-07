@@ -8,20 +8,22 @@
 
 import UIKit
 import SafariServices
+import RealmSwift
+import Alamofire
 
 class ViewController: UITableViewController {
-    
-    var days: [Day] = []
+
+    var days    = StorageManager.realmPathDays
     let spinner = UIActivityIndicatorView(style: .large)
     
-    let cellIdentifier = "cell"
-    let URLCell        = "URLTableViewCell"
+    let descriptionCell = "descriptionCell"
+    let URLCell         = "URLTableViewCell"
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
-        APIServices.shared.getObject(method: APIServices.eventMethod, params: ["id" : "F95908B6-492E-4D4A-B780-66E9DFE413E4"])
+        APIManager.shared.getCource()
         {[weak self] (result : Cource?, error: Error?) in
             if let error = error {
                 print("\(error)")
@@ -41,9 +43,10 @@ class ViewController: UITableViewController {
             self.spinner.stopAnimating()
             self.spinner.isHidden = true
             
-            self.navigationItem.title = result.event.title
-            self.days = result.event.dayes
-            
+            self.navigationItem.title = result.event?.title
+            guard let event = result.event else { return }
+            StorageManager.updateDB(event)
+
             self.tableView.reloadData()
         }
     }
@@ -51,10 +54,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if days[section].items.first?.links.isEmpty ?? true {
-            return 1
-        } else {
-            return (days[section].items.first?.links.count ?? 0) + 1}
+        return (days[section].items.first?.links.count ?? 0) + 1
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,7 +64,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CustomTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: descriptionCell, for: indexPath) as! CustomTableViewCell
             let day = days[indexPath.section].items.first
             
             cell.title.text           = day?.title
@@ -84,7 +84,7 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Темы на " + days[section].title
+        return "Темы на " + (days[section].title)
     }
     
     //MARK: -TableView Delegate

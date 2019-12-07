@@ -7,5 +7,6 @@ target 'REST API' do
 
   # Pods for REST API
   pod 'Alamofire'
+  pod 'RealmSwift'
 
 end

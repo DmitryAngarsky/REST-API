@@ -12,12 +12,13 @@
 		CE09218423912C3900C3724D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09218323912C3900C3724D /* ViewController.swift */; };
 		CE09218C23912C3B00C3724D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE09218A23912C3B00C3724D /* LaunchScreen.storyboard */; };
 		CE09219D23918CA400C3724D /* Cource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09219C23918CA400C3724D /* Cource.swift */; };
-		CE09219F23918CD000C3724D /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09219E23918CD000C3724D /* APIServices.swift */; };
+		CE09219F23918CD000C3724D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE09219E23918CD000C3724D /* APIManager.swift */; };
 		CE39BB3B23918E3900AC19D9 /* URLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39BB3A23918E3900AC19D9 /* URLTableViewCell.xib */; };
-		CE39BB3D23918E5200AC19D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE39BB3C23918E5200AC19D9 /* Assets.xcassets */; };
 		CE39BB4C23918F8000AC19D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39BB4B23918F8000AC19D9 /* Main.storyboard */; };
 		CE39BB4F23918FBA00AC19D9 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BB4E23918FBA00AC19D9 /* CustomTableViewCell.swift */; };
 		CE39BB5123918FC200AC19D9 /* URLTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39BB5023918FC200AC19D9 /* URLTableViewCell.swift */; };
+		CEA4127A239ADAEC009A9126 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA41279239ADAEC009A9126 /* Assets.xcassets */; };
+		CEA4127C239BBFC6009A9126 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4127B239BBFC6009A9126 /* StorageManager.swift */; };
 		D985435C1729A0ED3352FCEB /* Pods_REST_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65E4C1547E60424D05F9256 /* Pods_REST_API.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,12 +33,13 @@
 		CE09218B23912C3B00C3724D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE09218D23912C3B00C3724D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE09219C23918CA400C3724D /* Cource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cource.swift; sourceTree = "<group>"; };
-		CE09219E23918CD000C3724D /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		CE09219E23918CD000C3724D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CE39BB3A23918E3900AC19D9 /* URLTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = URLTableViewCell.xib; sourceTree = "<group>"; };
-		CE39BB3C23918E5200AC19D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../../../Downloads/iOSCources2019-master-2/08 - REST API/Web/Resources/Assets.xcassets"; sourceTree = "<group>"; };
 		CE39BB4B23918F8000AC19D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CE39BB4E23918FBA00AC19D9 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CE39BB5023918FC200AC19D9 /* URLTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTableViewCell.swift; sourceTree = "<group>"; };
+		CEA41279239ADAEC009A9126 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Graduation/WeatherApp/WeatherApp/Application/Assets.xcassets; sourceTree = "<group>"; };
+		CEA4127B239BBFC6009A9126 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +112,7 @@
 		CE09219423918B5E00C3724D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CE39BB3C23918E5200AC19D9 /* Assets.xcassets */,
+				CEA41279239ADAEC009A9126 /* Assets.xcassets */,
 				CE09218A23912C3B00C3724D /* LaunchScreen.storyboard */,
 				CE39BB4B23918F8000AC19D9 /* Main.storyboard */,
 				CE39BB3A23918E3900AC19D9 /* URLTableViewCell.xib */,
@@ -140,7 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				CE09219C23918CA400C3724D /* Cource.swift */,
-				CE09219E23918CD000C3724D /* APIServices.swift */,
+				CE09219E23918CD000C3724D /* APIManager.swift */,
+				CEA4127B239BBFC6009A9126 /* StorageManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -216,8 +219,8 @@
 			files = (
 				CE09218C23912C3B00C3724D /* LaunchScreen.storyboard in Resources */,
 				CE39BB3B23918E3900AC19D9 /* URLTableViewCell.xib in Resources */,
-				CE39BB3D23918E5200AC19D9 /* Assets.xcassets in Resources */,
 				CE39BB4C23918F8000AC19D9 /* Main.storyboard in Resources */,
+				CEA4127A239ADAEC009A9126 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +278,9 @@
 				CE39BB4F23918FBA00AC19D9 /* CustomTableViewCell.swift in Sources */,
 				CE09218023912C3900C3724D /* AppDelegate.swift in Sources */,
 				CE09218223912C3900C3724D /* SceneDelegate.swift in Sources */,
-				CE09219F23918CD000C3724D /* APIServices.swift in Sources */,
+				CE09219F23918CD000C3724D /* APIManager.swift in Sources */,
 				CE39BB5123918FC200AC19D9 /* URLTableViewCell.swift in Sources */,
+				CEA4127C239BBFC6009A9126 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
